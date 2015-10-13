@@ -30,6 +30,6 @@
     "semver": "^5.0.3"
   },
   "bin": {
-    "release": "./bin/gfr"
+    "gfr": "./bin/gfr"
   }
 }
