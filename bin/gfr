@@ -1,0 +1,35 @@
+#!/usr/bin/env node --harmony
+'use strict';
+
+const cmd = require('commander');
+const pkg = require('../package.json');
+const release = require('..');
+
+cmd
+  .version(pkg.version)
+  .option('-m --maven', 'Maven pom.xml file')
+  .option('-n --node', 'NodeJs package.json file')
+  .option('-p --push', 'Push changes to remote (origin)')
+  .option('-r --release <type>', 'Release type (major|minor|patch). Default: patch', /^(major|minor|patch)$/i, 'patch')
+  .parse(process.argv);
+
+let fileType = 'unknown';
+
+if (cmd.maven) {
+  fileType = 'maven';
+}
+else if (cmd.node) {
+  fileType = 'node';
+}
+else {
+  console.error('Specify type of file to process. --maven or --node');
+  cmd.outputHelp();
+  process.exit(1);
+}
+
+release(fileType, cmd.release, cmd.push)
+  .then(v => {
+    console.log(`Released version ${v}`);
+  }).catch(err => {
+    console.error('Error:', err);
+  });

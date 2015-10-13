@@ -1,0 +1,29 @@
+{
+  "name": "git-flow-release",
+  "version": "0.0.1",
+  "description": "Bump and release Node and Maven projects using the Git Flow process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frodeanonsen/git-flow-release.git"
+  },
+  "keywords": [
+    "git",
+    "flow",
+    "release"
+  ],
+  "author": "Frode Ånonsen <frode@anonsen.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frodeanonsen/git-flow-release/issues"
+  },
+  "homepage": "https://github.com/frodeanonsen/git-flow-release#readme",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "jsonfile": "^2.2.2",
+    "semver": "^5.0.3"
+  }
+}
