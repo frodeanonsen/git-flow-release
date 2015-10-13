@@ -31,11 +31,5 @@
   },
   "bin": {
     "release": "./bin/gfr"
-  },
-  "readme": "# git-flow-release\n\n> Bump and release Node and Maven projects using the Git Flow process\n\n## Installation\n\nInstall with npm\n\n```shell\nnpm install -g git-flow-release\n```\n\n## Usage\n\n```shell\ngfr\n```\n\n## Notes\n\nThis tool is developed for a specific use-case. Use at your own peril.\n",
-  "readmeFilename": "README.md",
-  "gitHead": "f183358c3f3c676c77464e6ad1f0adcc0bf3b262",
-  "_id": "git-flow-release@0.0.1",
-  "_shasum": "2bca30a2fc2f90a71a7ccb5f3194156fdbc1418d",
-  "_from": "git-flow-release@*"
+  }
 }
