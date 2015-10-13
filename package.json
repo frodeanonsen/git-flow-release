@@ -1,6 +1,6 @@
 {
   "name": "git-flow-release",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bump and release Node and Maven projects using the Git Flow process",
   "main": "index.js",
   "scripts": {
