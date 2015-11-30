@@ -7,6 +7,7 @@ const release = require('..');
 
 cmd
   .version(pkg.version)
+  .option('-c --current', 'Current version from package.json or pom.xml')
   .option('-m --maven', 'Maven pom.xml file')
   .option('-n --node', 'NodeJs package.json file')
   .option('-p --push', 'Push changes to remote (origin)')
@@ -27,9 +28,16 @@ else {
   process.exit(1);
 }
 
-release(fileType, cmd.release, cmd.push)
-  .then(v => {
-    console.log(`Released version ${v}`);
-  }).catch(err => {
-    console.error('Error:', err);
+if (cmd.current) {
+  release.version(fileType).then(v => {
+    console.log(v);
   });
+}
+else {
+  release.release(fileType, cmd.release, cmd.push)
+    .then(v => {
+      console.log(`Released version ${v}`);
+    }).catch(err => {
+      console.error('Error:', err);
+    });
+}
